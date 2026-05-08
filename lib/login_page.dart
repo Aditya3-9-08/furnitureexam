@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signup_page.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -42,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
-                    'assets/images/Group.png',
+                    'assets/images/Group.png', // <-- GANTI logo kamu
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -90,11 +91,20 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 8),
+
+              // Tombol Log in → langsung masuk HomePage tanpa validasi
               SizedBox(
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF1A1A1A),
                     foregroundColor: Colors.white,
@@ -112,6 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 20),
               TextButton(
                 onPressed: () {

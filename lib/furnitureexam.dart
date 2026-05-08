@@ -25,7 +25,7 @@ class FurnitureExam extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/images/room1.jpeg',
+            'assets/images/room1.jpeg', // <-- GANTI gambar background splash
             fit: BoxFit.cover,
           ),
           SafeArea(
